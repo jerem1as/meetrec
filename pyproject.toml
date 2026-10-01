@@ -1,0 +1,25 @@
+[project]
+name = "meetrec"
+version = "1.0.0"
+description = "Grabador local de reuniones (mic + audio del sistema) con transcripción a Markdown"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "PySide6-Essentials",
+    "faster-whisper>=1.1",
+    "nvidia-cublas-cu12",
+    "nvidia-cudnn-cu12==9.*",
+]
+
+[project.scripts]
+meetrec = "meetrec.__main__:main"
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["meetrec"]
+
+[tool.setuptools.package-data]
+meetrec = ["*.svg"]
